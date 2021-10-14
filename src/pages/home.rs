@@ -1,13 +1,8 @@
 use yew::prelude::*;
-mod app_route;
-mod pages;
-mod routes;
-use routes::Routes;
-mod components;
 
-struct Model;
+pub struct Home;
 
-impl Component for Model {
+impl Component for Home {
     type Message = ();
     type Properties = ();
 
@@ -28,11 +23,7 @@ impl Component for Model {
 
     fn view(&self) -> Html {
         html! {
-            <Routes />
+            <div>{ "Home Page "} </div>
         }
     }
-}
-
-fn main() {
-    yew::start_app::<Model>();
 }

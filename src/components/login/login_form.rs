@@ -1,13 +1,8 @@
 use yew::prelude::*;
-mod app_route;
-mod pages;
-mod routes;
-use routes::Routes;
-mod components;
 
-struct Model;
+pub struct LoginForm;
 
-impl Component for Model {
+impl Component for LoginForm {
     type Message = ();
     type Properties = ();
 
@@ -28,11 +23,8 @@ impl Component for Model {
 
     fn view(&self) -> Html {
         html! {
-            <Routes />
+            <div class="text-red-500">{ "Login Form "} </div>
         }
     }
 }
 
-fn main() {
-    yew::start_app::<Model>();
-}

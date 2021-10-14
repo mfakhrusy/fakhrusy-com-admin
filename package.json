@@ -1,0 +1,26 @@
+{
+  "name": "fakhrusy-com-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "buildcss": "postcss src/css/main.css -o src/css/main.min.css",
+    "dev": "npm run buildcss && trunk serve --port=8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfakhrusy/fakhrusy-com-admin.git"
+  },
+  "author": "Muhamad Fakhrusy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfakhrusy/fakhrusy-com-admin/issues"
+  },
+  "homepage": "https://github.com/mfakhrusy/fakhrusy-com-admin#readme",
+  "dependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "postcss-cli": "^9.0.1",
+    "tailwindcss": "^2.2.17"
+  }
+}
