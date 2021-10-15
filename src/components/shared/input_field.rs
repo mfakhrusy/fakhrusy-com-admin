@@ -1,14 +1,23 @@
 use yew::prelude::*;
-use crate::components::shared::input_field::InputField;
+use yew::Properties;
 
-pub struct LoginForm {}
+#[derive(Properties, Clone, PartialEq)]
+pub struct Props {
+    pub label: String,
+}
 
-impl Component for LoginForm {
+pub struct InputField {
+    label: String,
+}
+
+impl Component for InputField {
     type Message = ();
-    type Properties = ();
+    type Properties = Props;
 
-    fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        Self {}
+    fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Self {
+            label: props.label
+        }
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
@@ -25,16 +34,9 @@ impl Component for LoginForm {
     fn view(&self) -> Html {
         html! {
             <div class="flex flex-col">
-                <h1 class="font-semibold mb-2">
-                    { "Login" }
-                </h1>
-                <form>
-                    <InputField label="Username" />
-                    <div class="h-2" />
-                    <InputField label="Password" />
-                </form>
+                <label>{ &self.label }</label>
+                <input type="text" class="mt-1 p-2 h-8 rounded" />
             </div>
         }
     }
 }
-

@@ -24,9 +24,9 @@ impl Component for Login {
 
     fn view(&self) -> Html {
         html! {
-            <div class="text-red-500">
+            <main class="min-w-full min-h-screen flex justify-center items-center bg-purple-500">
                 <LoginForm />
-            </div>
+            </main>
         }
     }
 }
