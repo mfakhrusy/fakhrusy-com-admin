@@ -2,9 +2,9 @@ use yew::prelude::*;
 use crate::app_route::{AppAnchor, AppRoute};
 use crate::components::shared::{input_field::InputField, form_container::FormContainer};
 
-pub struct LoginForm {}
+pub struct RegisterForm {}
 
-impl Component for LoginForm {
+impl Component for RegisterForm {
     type Message = ();
     type Properties = ();
 
@@ -25,7 +25,7 @@ impl Component for LoginForm {
 
     fn view(&self) -> Html {
         html! {
-            <FormContainer title="Login">
+            <FormContainer title="Register">
                 <form>
                     <InputField label="E-mail" />
                     <div class="h-2" />
@@ -37,18 +37,17 @@ impl Component for LoginForm {
                         >
                             {"Forget Password"}
                         </AppAnchor>
+                        <AppAnchor
+                            route=AppRoute::Login
+                        >
+                            {"Login"}
+                        </AppAnchor>
                     </div>
                     <div class="h-5" />
                     <button class="bg-purple-500 hover:bg-opacity-80 transition px-5 py-2 rounded border-2 border-purple-600 w-full">
                         {"Login"}
                     </button>
-                    <div class="h-5" />
-                    <AppAnchor
-                        route=AppRoute::Register
-                        classes="flex justify-center text-center text-xs"
-                    >
-                        {"Register"}
-                    </AppAnchor>
+                    <div class="h-9" />
                 </form>
             </FormContainer>
         }

@@ -1,6 +1,8 @@
 use super::app_route::AppRoute;
-use crate::pages::home::Home;
-use crate::pages::login::Login;
+use crate::pages::home::HomePage;
+use crate::pages::login::LoginPage;
+use crate::pages::forget_password::ForgetPasswordPage;
+use crate::pages::register::RegisterPage;
 use yew::prelude::*;
 use yew_router::prelude::Router;
 
@@ -28,11 +30,17 @@ impl Component for Routes {
                 render = Router::render(|switch: AppRoute| {
                     match switch {
                         AppRoute::Home => html! {
-                           <Home />
+                           <HomePage />
                         },
                         AppRoute::Login => html! {
-                           <Login />
-                        }
+                           <LoginPage />
+                        },
+                        AppRoute::Register => html! {
+                           <RegisterPage />
+                        },
+                        AppRoute::ForgetPassword => html! {
+                           <ForgetPasswordPage />
+                        },
                     }
                 })
             />

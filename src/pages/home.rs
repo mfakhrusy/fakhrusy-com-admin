@@ -1,8 +1,8 @@
 use yew::prelude::*;
 
-pub struct Home;
+pub struct HomePage;
 
-impl Component for Home {
+impl Component for HomePage {
     type Message = ();
     type Properties = ();
 

@@ -1,9 +1,9 @@
 use yew::prelude::*;
-use crate::components::login::login_form::LoginForm;
+use crate::components::forget_password::forget_password_form::ForgetPasswordForm;
 
-pub struct LoginPage;
+pub struct ForgetPasswordPage;
 
-impl Component for LoginPage {
+impl Component for ForgetPasswordPage {
     type Message = ();
     type Properties = ();
 
@@ -25,8 +25,9 @@ impl Component for LoginPage {
     fn view(&self) -> Html {
         html! {
             <main class="min-w-full min-h-screen flex justify-center items-center bg-purple-500">
-                <LoginForm />
+                <ForgetPasswordForm />
             </main>
         }
     }
 }
+
