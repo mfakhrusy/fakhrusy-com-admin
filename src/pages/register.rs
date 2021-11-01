@@ -1,5 +1,6 @@
-use yew::prelude::*;
 use crate::components::register::register_form::RegisterForm;
+use crate::components::shared::page::Page;
+use yew::prelude::*;
 
 pub struct RegisterPage;
 
@@ -24,9 +25,11 @@ impl Component for RegisterPage {
 
     fn view(&self) -> Html {
         html! {
-            <main class="min-w-full min-h-screen flex justify-center items-center bg-purple-500">
-                <RegisterForm />
-            </main>
+            <Page>
+                <main class="min-w-full min-h-screen flex justify-center items-center bg-purple-500">
+                    <RegisterForm />
+                </main>
+            </Page>
         }
     }
 }

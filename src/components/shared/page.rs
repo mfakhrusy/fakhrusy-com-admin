@@ -1,17 +1,21 @@
+use crate::components::routes::route_guard::RouteGuard;
 use yew::{prelude::*, Children};
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
-    pub title: String,
     #[prop_or_default]
     pub children: Children,
+    // whether or not the route is protected
+    // if false -> redirect to login page
+    #[prop_or_default]
+    pub is_protected: bool,
 }
 
-pub struct FormContainer {
+pub struct Page {
     props: Props,
 }
 
-impl Component for FormContainer {
+impl Component for Page {
     type Message = ();
     type Properties = Props;
 
@@ -28,13 +32,18 @@ impl Component for FormContainer {
     }
 
     fn view(&self) -> Html {
-        html! {
-            <div class="flex flex-col border-2 border-purple-600 py-12 px-8 rounded-md bg-purple-400">
-                <h1 class="font-semibold mb-2 text-xl">
-                    { &self.props.title }
-                </h1>
+        let is_authenticated = false;
+
+        if self.props.is_protected {
+            html! {
+                <RouteGuard is_authenticated = is_authenticated>
+                    { for self.props.children.iter() }
+                </RouteGuard>
+            }
+        } else {
+            html! {
                 { for self.props.children.iter() }
-            </div>
+            }
         }
     }
 }

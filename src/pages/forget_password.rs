@@ -1,5 +1,6 @@
-use yew::prelude::*;
 use crate::components::forget_password::forget_password_form::ForgetPasswordForm;
+use crate::components::shared::page::Page;
+use yew::prelude::*;
 
 pub struct ForgetPasswordPage;
 
@@ -24,10 +25,11 @@ impl Component for ForgetPasswordPage {
 
     fn view(&self) -> Html {
         html! {
-            <main class="min-w-full min-h-screen flex justify-center items-center bg-purple-500">
-                <ForgetPasswordForm />
-            </main>
+            <Page>
+                <main class="min-w-full min-h-screen flex justify-center items-center bg-purple-500">
+                    <ForgetPasswordForm />
+                </main>
+            </Page>
         }
     }
 }
-

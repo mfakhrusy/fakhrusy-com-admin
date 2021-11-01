@@ -1,6 +1,6 @@
-use yew::prelude::*;
 use crate::app_route::{AppAnchor, AppRoute};
-use crate::components::shared::{input_field::InputField, form_container::FormContainer};
+use crate::components::shared::{form_container::FormContainer, input_field::InputField};
+use yew::prelude::*;
 
 pub struct RegisterForm {}
 

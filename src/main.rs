@@ -5,9 +5,9 @@ mod routes;
 use routes::Routes;
 mod components;
 
-struct Model;
+struct Main;
 
-impl Component for Model {
+impl Component for Main {
     type Message = ();
     type Properties = ();
 
@@ -34,5 +34,5 @@ impl Component for Model {
 }
 
 fn main() {
-    yew::start_app::<Model>();
+    yew::start_app::<Main>();
 }

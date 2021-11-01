@@ -1,21 +1,23 @@
-use yew::prelude::*;
-use yew::Properties;
+use super::redirect::Redirect;
+use yew::{prelude::*, Children};
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
-    pub label: String,
+    pub is_authenticated: bool,
+    #[prop_or_default]
+    pub children: Children,
 }
 
-pub struct InputField {
-    label: String,
+pub struct RouteGuard {
+    props: Props,
 }
 
-impl Component for InputField {
+impl Component for RouteGuard {
     type Message = ();
     type Properties = Props;
 
     fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        Self { label: props.label }
+        Self { props: props }
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
@@ -30,11 +32,16 @@ impl Component for InputField {
     }
 
     fn view(&self) -> Html {
-        html! {
-            <div class="flex flex-col">
-                <label>{ &self.label }</label>
-                <input type="text" class="mt-1 p-2 h-8 rounded" />
-            </div>
+        let is_authenticated = self.props.is_authenticated;
+
+        if is_authenticated {
+            return html! {
+                { for self.props.children.iter() }
+            };
+        } else {
+            return html! {
+                <Redirect to="/login" />
+            };
         }
     }
 }

@@ -1,3 +1,4 @@
+use crate::components::shared::page::Page;
 use yew::prelude::*;
 
 pub struct HomePage;
@@ -23,7 +24,9 @@ impl Component for HomePage {
 
     fn view(&self) -> Html {
         html! {
-            <div>{ "Home Page "} </div>
+            <Page is_protected = true>
+                <div>{ "Home Page "} </div>
+            </Page>
         }
     }
 }

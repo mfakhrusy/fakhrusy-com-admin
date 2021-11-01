@@ -1,5 +1,5 @@
-use yew_router::prelude::Switch;
 use yew_router::components::RouterAnchor;
+use yew_router::prelude::Switch;
 
 #[derive(Switch, Clone, Debug)]
 pub enum AppRoute {

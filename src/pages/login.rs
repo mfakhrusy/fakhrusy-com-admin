@@ -1,5 +1,6 @@
-use yew::prelude::*;
 use crate::components::login::login_form::LoginForm;
+use crate::components::shared::page::Page;
+use yew::prelude::*;
 
 pub struct LoginPage;
 
@@ -24,9 +25,11 @@ impl Component for LoginPage {
 
     fn view(&self) -> Html {
         html! {
-            <main class="min-w-full min-h-screen flex justify-center items-center bg-purple-500">
-                <LoginForm />
-            </main>
+            <Page>
+                <main class="min-w-full min-h-screen flex justify-center items-center bg-purple-500">
+                    <LoginForm />
+                </main>
+            </Page>
         }
     }
 }
